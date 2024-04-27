@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@hookform/resolvers": "^3.3.4",
 		"@labor/ui": "workspace:*",
+		"@prisma/client": "5.13.0",
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.42.7",
 		"lucide-react": "^0.363.0",
