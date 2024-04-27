@@ -1,7 +1,5 @@
+import { LoginForm } from '@/ui/login-form'
 import {
-	Button,
-	Input,
-	Label,
 	Card,
 	CardHeader,
 	CardTitle,
@@ -24,21 +22,7 @@ export default function Page() {
 				</CardHeader>
 
 				<CardContent className="flex flex-col gap-4 max-w-screen-sm w-full">
-					<div className="flex flex-col gap-2">
-						<Label htmlFor="input1">E-mail</Label>
-						<Input id="input1" placeholder="Fala dele professor" />
-					</div>
-
-					<div className="flex flex-col gap-2">
-						<Label htmlFor="input2">Senha</Label>
-						<Input
-							id="input2"
-							type="password"
-							placeholder="Fala dele professor"
-						/>
-					</div>
-
-					<Button>Acessar</Button>
+					<LoginForm />
 				</CardContent>
 
 				<CardFooter>

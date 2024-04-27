@@ -27,10 +27,7 @@ export default function Page() {
 				</CardContent>
 
 				<CardFooter>
-					<Link
-						href="/login"
-						className="text-primary hover:underline"
-					>
+					<Link href="/" className="text-primary hover:underline">
 						Já possui conta? Acesse
 					</Link>
 				</CardFooter>
