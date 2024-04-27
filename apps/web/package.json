@@ -9,13 +9,16 @@
 		"lint": "eslint . --max-warnings 0"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^3.3.4",
 		"@labor/ui": "workspace:*",
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.42.7",
 		"lucide-react": "^0.363.0",
 		"next": "^14.1.1",
+		"prisma": "^5.13.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-hook-form": "^7.51.3",
 		"zod": "^3.23.4"
 	},
 	"devDependencies": {
