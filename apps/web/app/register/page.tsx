@@ -25,8 +25,13 @@ export default function Page() {
 
 				<CardContent className="flex flex-col gap-4 max-w-screen-sm w-full">
 					<div className="flex flex-col gap-2">
+						<Label htmlFor="input1">Nome</Label>
+						<Input id="input1" placeholder="Insira seu nome" />
+					</div>
+
+					<div className="flex flex-col gap-2">
 						<Label htmlFor="input1">E-mail</Label>
-						<Input id="input1" placeholder="Fala dele professor" />
+						<Input id="input1" placeholder="Insira seu e-mail" />
 					</div>
 
 					<div className="flex flex-col gap-2">
@@ -34,11 +39,19 @@ export default function Page() {
 						<Input
 							id="input2"
 							type="password"
-							placeholder="Fala dele professor"
+							placeholder="Insira sua senha"
 						/>
 					</div>
 
-					<Button>Acessar</Button>
+					<div className="flex flex-col gap-2">
+						<Label htmlFor="input2">Confirmação de Senha</Label>
+						<Input
+							id="input2"
+							type="password"
+							placeholder="Insira sua confirmação de senha"
+						/>
+					</div>
+					<Button>Cadastrar</Button>
 				</CardContent>
 
 				<CardFooter>
