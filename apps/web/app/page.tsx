@@ -26,12 +26,6 @@ const LINKS = [
 		description:
 			'Choose from over 15 examples and deploy with a single click.',
 	},
-	{
-		title: 'Deploy',
-		href: 'https://vercel.com/new',
-		description:
-			'Instantly deploy your App to a shareable URL with Vercel.',
-	},
 ]
 
 export default function Page(): JSX.Element {
