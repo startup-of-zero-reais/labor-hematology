@@ -72,6 +72,9 @@ importers:
       '@labor/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@labor/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@prisma/client':
         specifier: 5.13.0
         version: 5.13.0(prisma@5.13.0)
