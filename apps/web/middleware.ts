@@ -1,12 +1,24 @@
-import { type NextRequest } from 'next/server'
+import { NextFetchEvent, type NextRequest } from 'next/server'
 import { parse } from './lib/middleware/utils'
-import { APP_HOSTNAMES } from '@labor/utils'
-import AppMiddleware from './lib/middleware/app'
+import { API_HOSTNAMES, DASHBOARD_HOSTNAMES } from '@labor/utils'
+import RootMiddleware from './lib/middleware/root'
+import DashboardMiddleware from './lib/middleware/dashboard'
+import ApiMiddleware from './lib/middleware/api'
 
-export async function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest, ev: NextFetchEvent) {
 	const { domain } = parse(request)
 
-	if (APP_HOSTNAMES.has(domain)) return AppMiddleware(request)
+	// for API
+	if (API_HOSTNAMES.has(domain)) {
+		return ApiMiddleware(request)
+	}
+
+	// for Dashboard
+	if (DASHBOARD_HOSTNAMES.has(domain)) {
+		return DashboardMiddleware(request)
+	}
+
+	return RootMiddleware(request, ev)
 }
 
 export const config = {
