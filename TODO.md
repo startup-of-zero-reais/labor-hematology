@@ -10,31 +10,31 @@
 
 ## Documentação
 
-[ ] Criar documentação do produto
-[ ] API poderá ter integração externa ? Documentação de API : null
+-   [ ] Criar documentação do produto
+-   [ ] API poderá ter integração externa ? Documentação de API : null
 
 ## App
 
-[ ] Criar template da dashboard
-[ ] Criar sidebar
-[ ] Criar página para adicionar laudo
+-   [ ] Criar template da dashboard
+-   [ ] Criar sidebar
+-   [ ] Criar página para adicionar laudo
 
 ## Api
 
-[ ] Criar CRUD de pets
-[ ] Possibilidade de busca por nome ou marcação
+-   [ ] Criar CRUD de pets
+-   [ ] Possibilidade de busca por nome ou marcação
 
-[ ] Criar CRUD de espécies
-[ ] Possiblidade de busca por espécie ou nome comum
+-   [ ] Criar CRUD de espécies
+-   [ ] Possiblidade de busca por espécie ou nome comum
 
-[ ] Criar CRUD de referências
-[ ] Criar CRUD de laudos
+-   [ ] Criar CRUD de referências
+-   [ ] Criar CRUD de laudos
 
 ## CI/CD
 
-[ ] Configurar projeto para prod no supabase
-[ ] Configurar deploy da plataforma na vercel
-[ ] Configurar dominio na cloudflare (comprar domínio ?)
+-   [ ] Configurar projeto para prod no supabase
+-   [ ] Configurar deploy da plataforma na vercel
+-   [ ] Configurar dominio na cloudflare (comprar domínio ?)
 
 # Links
 
