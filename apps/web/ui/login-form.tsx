@@ -7,7 +7,6 @@ import {
 	Button,
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
@@ -27,6 +26,7 @@ const intlErrors = new Map([
 		'Email link is invalid or has expired',
 		'O Link de acesso é inválido ou já expirou',
 	],
+	['Auth session missing!', 'Sua sessaão expirou, faca o login novamente'],
 ])
 
 export const LoginForm = () => {
