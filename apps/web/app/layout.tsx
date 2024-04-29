@@ -4,7 +4,7 @@ import '@labor/ui/dist/index.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--inter' })
 
 export const metadata: Metadata = {
 	title: 'Labor Hematology',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }): JSX.Element {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={inter.variable}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
