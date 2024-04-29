@@ -9,7 +9,7 @@ export const LogoutButton = ({}: LogoutButtonProps) => {
 	const signOut = async () => {
 		const supabase = createClient()
 		await supabase.auth.signOut()
-		window.location.replace('/')
+		window.location.replace('/login')
 	}
 
 	return (
