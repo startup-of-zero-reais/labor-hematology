@@ -13,8 +13,8 @@ export const ErrorCode = z.enum([
 const ErrorCodeToHttpStatus: Record<z.infer<typeof ErrorCode>, number> = {
 	bad_request: 400,
 	not_found: 404,
-	internal_server_error: 500,
 	unprocessable_entity: 422,
+	internal_server_error: 500,
 }
 
 export type ErrorCodes = z.infer<typeof ErrorCode>
