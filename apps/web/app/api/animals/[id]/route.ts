@@ -1,6 +1,6 @@
 import prisma from '@/lib/prisma'
 import { LaborApiError, handleAndReturnErrorResponse } from '@/lib/api/errors'
-import { animalSchema } from '../schema'
+import { animalSchema } from '@/lib/zod/animal-schema'
 
 export async function GET(
 	request: Request,

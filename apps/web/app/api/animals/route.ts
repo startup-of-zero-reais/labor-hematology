@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
 import { handleAndReturnErrorResponse } from '@/lib/api/errors'
 import { getPagination, getSearchParams, handlePaginate } from '@labor/utils'
-import { animalSchema } from './schema'
+import { animalSchema } from '@/lib/zod/animal-schema'
 
 export async function POST(request: Request) {
 	try {
