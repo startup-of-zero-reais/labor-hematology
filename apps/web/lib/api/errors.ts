@@ -7,10 +7,12 @@ export const ErrorCode = z.enum([
 	'bad_request',
 	'internal_server_error',
 	'unprocessable_entity',
+	'not_found',
 ])
 
 const ErrorCodeToHttpStatus: Record<z.infer<typeof ErrorCode>, number> = {
 	bad_request: 400,
+	not_found: 404,
 	internal_server_error: 500,
 	unprocessable_entity: 422,
 }
