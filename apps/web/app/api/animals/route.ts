@@ -37,12 +37,13 @@ export async function GET(request: Request) {
 					trackingMark: {
 						contains: params.trackingMark,
 					},
+					deletedAt: null,
 				},
 				orderBy: {
 					updatedAt: 'desc',
 				},
 			}),
-			prisma.animal.count(),
+			prisma.animal.count({ where: { deletedAt: null } }),
 		])
 
 		return Response.json({
