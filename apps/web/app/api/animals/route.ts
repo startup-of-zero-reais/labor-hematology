@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma'
 import { z } from 'zod'
 import { handleAndReturnErrorResponse } from '@/lib/api/errors'
+import { getPagination, handlePaginate } from '@labor/utils'
 
 export async function POST(request: Request) {
 	try {
@@ -35,6 +36,30 @@ export async function POST(request: Request) {
 			},
 		})
 		return Response.json(result)
+	} catch (error) {
+		return handleAndReturnErrorResponse(error)
+	}
+}
+
+export async function GET(request: Request) {
+	try {
+		const pagination = getPagination(request.url)
+
+		const [animals, count] = await prisma.$transaction([
+			prisma.animal.findMany({
+				take: pagination.limit,
+				skip: pagination.offset,
+				orderBy: {
+					updatedAt: 'desc',
+				},
+			}),
+			prisma.animal.count(),
+		])
+
+		return Response.json({
+			content: animals,
+			pagination: handlePaginate(request.url, count),
+		})
 	} catch (error) {
 		return handleAndReturnErrorResponse(error)
 	}
