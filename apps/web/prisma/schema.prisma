@@ -22,4 +22,25 @@ model User {
 }
 
 
+model Animal {
+  id String @id @default(cuid())
+  name String
+  trackingMark String?
+  markType Mark @default(UNMARKED)
+  age Int
+  gender String
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @db.Timestamptz(6)
+  deletedAt DateTime? @db.Timestamptz(6)
 
+  @@unique ([id, trackingMark])
+  @@index ([id])
+  @@index ([updatedAt])
+}
+
+
+enum Mark {
+  MICROCHIP
+  WASHER
+  UNMARKED
+}
