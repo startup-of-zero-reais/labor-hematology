@@ -105,6 +105,9 @@ importers:
       zod:
         specifier: ^3.23.4
         version: 3.23.4
+      zod-error:
+        specifier: ^1.5.0
+        version: 1.5.0
     devDependencies:
       '@labor/ts-config':
         specifier: workspace:*
@@ -1588,6 +1591,9 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
+  zod-error@1.5.0:
+    resolution: {integrity: sha512-zzopKZ/skI9iXpqCEPj+iLCKl9b88E43ehcU+sbRoHuwGd9F1IDVGQ70TyO6kmfiRL1g4IXkjsXK+g1gLYl4WQ==}
+
   zod@3.23.4:
     resolution: {integrity: sha512-/AtWOKbBgjzEYYQRNfoGKHObgfAZag6qUJX1VbHo2PRBgS+wfWagEY2mizjfyAPcGesrJOcx/wcl0L9WnVrHFw==}
 
@@ -2779,5 +2785,9 @@ snapshots:
   ws@8.16.0: {}
 
   yaml@2.4.1: {}
+
+  zod-error@1.5.0:
+    dependencies:
+      zod: 3.23.4
 
   zod@3.23.4: {}
