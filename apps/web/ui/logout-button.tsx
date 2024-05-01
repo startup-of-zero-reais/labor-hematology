@@ -2,10 +2,13 @@
 
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@labor/ui'
+import { LogOut } from 'lucide-react'
 
-interface LogoutButtonProps {}
+interface LogoutButtonProps {
+	className?: string
+}
 
-export const LogoutButton = ({}: LogoutButtonProps) => {
+export const LogoutButton = ({ className }: LogoutButtonProps) => {
 	const signOut = async () => {
 		const supabase = createClient()
 		await supabase.auth.signOut()
@@ -13,7 +16,8 @@ export const LogoutButton = ({}: LogoutButtonProps) => {
 	}
 
 	return (
-		<Button variant="destructive" onClick={signOut}>
+		<Button variant="destructive" onClick={signOut} className={className}>
+			<LogOut />
 			Sair
 		</Button>
 	)

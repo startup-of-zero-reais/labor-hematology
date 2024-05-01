@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-function Logo({ width = 149, height = width * 0.02, ...props }) {
+function Logo({ width = 149, height = width * 1.02, ...props }) {
 	return (
 		<svg
 			width={width}
