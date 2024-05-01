@@ -24,7 +24,7 @@ export async function GET(
 	}
 }
 
-export async function PUT(
+export async function PATCH(
 	request: Request,
 	{ params }: { params: { id: string } },
 ) {
@@ -33,12 +33,32 @@ export async function PUT(
 		const animal = animalSchema.partial().parse(body)
 		const { id } = params
 
-		const result = await prisma.animal.update({
+		await prisma.animal.update({
 			where: { id },
 			data: animal,
 		})
 
-		return Response.json(result)
+		return new Response(null, { status: 204 })
+	} catch (error) {
+		return handleAndReturnErrorResponse(error)
+	}
+}
+
+export async function PUT(
+	request: Request,
+	{ params }: { params: { id: string } },
+) {
+	try {
+		const body = await request.json()
+		const animal = animalSchema.parse(body)
+
+		const { id } = params
+
+		await prisma.animal.update({
+			where: { id },
+			data: animal,
+		})
+		return new Response(null, { status: 204 })
 	} catch (error) {
 		return handleAndReturnErrorResponse(error)
 	}
@@ -55,7 +75,7 @@ export async function DELETE(
 			where: { id },
 			data: { deletedAt: new Date() },
 		})
-		return Response.json({ id })
+		return new Response(null, { status: 204 })
 	} catch (error) {
 		return handleAndReturnErrorResponse(error)
 	}
