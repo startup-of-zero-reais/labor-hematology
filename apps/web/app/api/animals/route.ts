@@ -54,7 +54,7 @@ export async function GET(request: Request) {
 					updatedAt: 'desc',
 				},
 			}),
-			prisma.animal.count({ where: { deletedAt: null } }),
+			prisma.animal.count({ where: { deletedAt } }),
 		])
 
 		return Response.json({
