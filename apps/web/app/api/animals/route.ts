@@ -26,6 +26,17 @@ export async function GET(request: Request) {
 		const pagination = getPagination(request.url)
 		const params = getSearchParams(request.url)
 
+		const inTrash = params.in_trash === '1'
+
+		let deletedAt: object | null = null
+
+		if (inTrash) {
+			const now = new Date()
+			now.setHours(0, 0, 0, 0)
+			now.setDate(now.getDate() - 30)
+			deletedAt = { gte: now.toISOString() }
+		}
+
 		const [animals, count] = await prisma.$transaction([
 			prisma.animal.findMany({
 				take: pagination.limit,
@@ -37,7 +48,7 @@ export async function GET(request: Request) {
 					trackingMark: {
 						contains: params.trackingMark,
 					},
-					deletedAt: null,
+					deletedAt,
 				},
 				orderBy: {
 					updatedAt: 'desc',
