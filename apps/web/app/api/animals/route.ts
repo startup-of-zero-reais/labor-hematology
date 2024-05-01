@@ -37,18 +37,34 @@ export async function GET(request: Request) {
 			deletedAt = { gte: now.toISOString() }
 		}
 
+		let search = {}
+
+		if (params.search) {
+			search = {
+				OR: [
+					{
+						name: {
+							contains: params.search,
+						},
+					},
+					{
+						trackingMark: {
+							contains: params.search,
+						},
+					},
+				],
+			}
+		}
+
 		const [animals, count] = await prisma.$transaction([
 			prisma.animal.findMany({
 				take: pagination.limit,
 				skip: pagination.offset,
 				where: {
-					name: {
-						contains: params.name,
+					...search,
+					AND: {
+						deletedAt,
 					},
-					trackingMark: {
-						contains: params.trackingMark,
-					},
-					deletedAt,
 				},
 				orderBy: {
 					updatedAt: 'desc',
